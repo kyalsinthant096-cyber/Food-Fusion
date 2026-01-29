@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to right, #fcd34d, #fff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li a {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #eab308;
+}
+
+nav .login_btn {
+  border-style: none;
+  background-color: #facc15;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s; 
+}
+
+/* .login_btn:hover{
+  background-color: #fbbf24;
+} */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fffef4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  top: 35px;
+  left: 0;
+  min-width: 180px;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.dropdown-content a {
+  padding: 10px 20px;
+  display: block;
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #fef08a;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fffdf5;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* disable hover dropdown on mobile */
+  }
+
+  .dropdown-content a {
+    padding-left: 30px;
+  }
+}
